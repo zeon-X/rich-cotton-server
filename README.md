@@ -70,7 +70,9 @@ The server will be running on port 3000 by default.
 - Express.js
 - MongoDB
 - Mongoose
-- Body-parser
+- Cors
+- dotenv
+- nodemon
 
 ## Contributing
 

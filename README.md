@@ -30,7 +30,6 @@ Before you begin, ensure you have the following installed on your machine:
 
 2. Install project dependencies:
 
-
 ## Project Structure
 
 The project is organized into the following directories:
@@ -38,7 +37,7 @@ The project is organized into the following directories:
 - `controllers`: Contains controller functions for CRUD operations.
 - `models`: Defines Mongoose models for products and clients.
 - `routes`: Defines Express routes for handling API requests.
-- `app.js`: Sets up the Express application and connects to MongoDB.
+- `index.js`: Sets up the Express application and connects to MongoDB.
 
 ## Usage
 
@@ -46,12 +45,12 @@ The project is organized into the following directories:
 
 To start the server, run the following command in your project directory:
 
-
 The server will be running on port 3000 by default.
 
 ### API Endpoints
 
 - **Products**
+
   - Create a new product: `POST /products`
   - Get all products: `GET /products`
   - Get a single product by ID: `GET /products/:id`

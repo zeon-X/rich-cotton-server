@@ -13,6 +13,7 @@ exports.createProduct = async (req, res) => {
 
 // Get all products
 exports.getProducts = async (req, res) => {
+  // console.log("hit");
   try {
     const products = await Product.find();
     res.json(products);

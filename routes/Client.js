@@ -6,13 +6,13 @@ const clientController = require("../controllers/clientController");
 router.post("/", clientController.createClient);
 
 // Get all clients
-router.get("/", clientController.getClients);
+router.get("/get", clientController.getClients);
 
 // Get a single client by ID
 router.get("/:id", clientController.getClientById);
 
 // Update a client by ID
-router.post("/:id", clientController.updateClient);
+router.post("/update/:id", clientController.updateClient);
 
 // Delete a client by ID
 router.delete("/:id", clientController.deleteClient);

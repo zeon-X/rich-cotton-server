@@ -13,6 +13,7 @@ exports.createClient = async (req, res) => {
 
 // Get all clients
 exports.getClients = async (req, res) => {
+  // console.log("get client hit");
   try {
     const clients = await Client.find();
     res.json(clients);
@@ -36,6 +37,7 @@ exports.getClientById = async (req, res) => {
 
 // Update a client by ID
 exports.updateClient = async (req, res) => {
+  // console.log("client update hit");
   try {
     const client = await Client.findByIdAndUpdate(req.params.id, req.body, {
       new: true, // Return the updated client
@@ -51,6 +53,7 @@ exports.updateClient = async (req, res) => {
 
 // Delete a client by ID
 exports.deleteClient = async (req, res) => {
+  // console.log(req);
   try {
     const client = await Client.findByIdAndRemove(req.params.id);
     if (!client) {

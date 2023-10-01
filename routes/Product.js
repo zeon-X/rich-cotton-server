@@ -6,13 +6,13 @@ const productController = require("../controllers/productController");
 router.post("/", productController.createProduct);
 
 // Get all products
-router.get("/", productController.getProducts);
+router.get("/get", productController.getProducts);
 
 // Get a single product by ID
 router.get("/:id", productController.getProductById);
 
 // Update a product by ID
-router.post("/:id", productController.updateProduct);
+router.post("/update/:id", productController.updateProduct);
 
 // Delete a product by ID
 router.delete("/:id", productController.deleteProduct);

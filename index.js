@@ -27,8 +27,8 @@ app.options("*", cors());
 app.use(express.json());
 
 //API Config
-app.use("/api/v1", clientRoute);
-app.use("/api/v1", productRoute);
+app.use("/api/v1/client", clientRoute);
+app.use("/api/v1/product", productRoute);
 
 app.listen(PORT, () => {
   console.log(`Server Running On PORT ${PORT}`);

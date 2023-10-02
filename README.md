@@ -51,18 +51,18 @@ The server will be running on port 3000 by default.
 
 - **Products**
 
-  - Create a new product: `POST /products`
-  - Get all products: `GET /products`
-  - Get a single product by ID: `GET /products/:id`
-  - Update a product by ID: `PUT /products/:id`
-  - Delete a product by ID: `DELETE /products/:id`
+  - Create a new product: `POST /product`
+  - Get all products: `GET /product/get`
+  - Get a single product by ID: `GET /product/:id`
+  - Update a product by ID: `PUT /product/update/:id`
+  - Delete a product by ID: `DELETE /product/:id`
 
 - **Clients**
-  - Create a new client: `POST /clients`
-  - Get all clients: `GET /clients`
-  - Get a single client by ID: `GET /clients/:id`
-  - Update a client by ID: `PUT /clients/:id`
-  - Delete a client by ID: `DELETE /clients/:id`
+  - Create a new client: `POST /client`
+  - Get all clients: `GET /client/get`
+  - Get a single client by ID: `GET /client/:id`
+  - Update a client by ID: `PUT /client/update/:id`
+  - Delete a client by ID: `DELETE /client/:id`
 
 ## Technologies Used
 

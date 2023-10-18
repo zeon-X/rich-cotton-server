@@ -11,6 +11,20 @@ router.get("/get", productController.getProducts);
 // Get a single product by ID
 router.get("/:id", productController.getProductById);
 
+// Get a single product by ID
+router.get("/findByProductId/:id", productController.getProductByProductId);
+
+// Get a single product by ID
+router.get(
+  "/findByCategory/:id",
+  productController.getProductByProductCategory
+);
+
+router.get(
+  "/findBySubCategory/:id",
+  productController.getProductByProductSubCategory
+);
+
 // Update a product by ID
 router.post("/update/:id", productController.updateProduct);
 

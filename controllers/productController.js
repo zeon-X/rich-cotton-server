@@ -48,14 +48,15 @@ exports.getProductByProductId = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
-// Get a single product by ID
+// Get a single product by category
 exports.getProductByProductCategory = async (req, res) => {
-  // console.log("hit");
+  // console.log("hit getProductByProductCategory");
   try {
     const product = await Product.find({ parentCategory: req.params.id });
     if (!product) {
       return res.status(404).json({ error: "Product not found" });
     }
+    // console.log("product", product);
     res.status(200).json(product);
   } catch (err) {
     res.status(500).json({ error: err.message });

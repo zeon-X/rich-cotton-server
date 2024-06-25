@@ -14,7 +14,7 @@ const productSchema = new mongoose.Schema({
   price: Number,
   deliveryTime: String,
   slug: String,
-  status: String,
+  status: Boolean,
 });
 
 module.exports = mongoose.model("Product", productSchema);

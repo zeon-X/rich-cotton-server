@@ -48,6 +48,19 @@ exports.getProductByProductId = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+// Get a single product by ID
+exports.getProductByProductSlug = async (req, res) => {
+  // console.log("hit");
+  try {
+    const product = await Product.find({ slug: req.params.id });
+    if (!product) {
+      return res.status(404).json({ error: "Product not found" });
+    }
+    res.status(200).json(product[0]);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
 // Get a single product by category
 exports.getProductByProductCategory = async (req, res) => {
   // console.log("hit getProductByProductCategory");

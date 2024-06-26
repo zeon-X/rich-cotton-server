@@ -15,6 +15,9 @@ router.get("/:id", productController.getProductById);
 router.get("/findByProductId/:id", productController.getProductByProductId);
 
 // Get a single product by ID
+router.get("/findByProductSlug/:id", productController.getProductByProductSlug);
+
+// Get a single product by ID
 router.get(
   "/findByCategory/:id",
   productController.getProductByProductCategory

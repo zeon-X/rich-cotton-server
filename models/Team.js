@@ -16,7 +16,7 @@ const teamSchema = new mongoose.Schema({
     twitter: String,
   },
   image: String,
-  priority: Number,
+  priority: { type: Number, required: true },
 });
 
 module.exports = mongoose.model("Team", teamSchema);

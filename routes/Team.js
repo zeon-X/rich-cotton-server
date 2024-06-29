@@ -5,6 +5,9 @@ const teamController = require("../controllers/teamController");
 // Create a new team
 router.post("/", teamController.createTeam);
 
+// Create multiple team
+// router.post("/multiple", teamController.createTeamsMultiple);
+
 // Get all teams
 router.get("/get", teamController.getTeams);
 

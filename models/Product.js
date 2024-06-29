@@ -11,7 +11,7 @@ const productSchema = new mongoose.Schema({
   imagesArray: [String],
   fabric: String,
   wash: String,
-  price: Number,
+  price: String,
   deliveryTime: String,
   slug: { type: String, trim: true },
   status: String,

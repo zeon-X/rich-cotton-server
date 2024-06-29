@@ -31,6 +31,10 @@ app.use(express.json());
 app.use("/api/v1/client", clientRoute);
 app.use("/api/v1/product", productRoute);
 app.use("/api/v1/team", teamRoute);
+// app.post("/api/v1/test", (req, res) => {
+//   // Respond with a JSON object containing a message
+//   res.json({ msg: "Endpoint is working properly." });
+// });
 
 app.listen(PORT, () => {
   console.log(`Server Running On PORT ${PORT}`);

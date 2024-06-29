@@ -1,9 +1,24 @@
 const Team = require("../models/Team");
 
+function createSlug(line) {
+  if (typeof line !== "string") {
+    throw new Error("Input must be a string");
+  }
+  return line
+    .toLowerCase() // Convert to lowercase
+    .trim() // Trim leading/trailing whitespace
+    .replace(/[^\w\s-]/g, "") // Remove special characters
+    .replace(/\s+/g, "-"); // Replace spaces with hyphens
+}
+
 // Create a new team
 exports.createTeam = async (req, res) => {
   try {
-    const team = new Team(req.body);
+    let mem = {
+      ...req.body,
+      slug: createSlug(`${team.name} ${team.position}`),
+    };
+    const team = new Team(mem);
     await team.save();
     res.status(201).json(team);
   } catch (err) {
@@ -37,7 +52,14 @@ exports.getTeamById = async (req, res) => {
 // Update a team by ID
 exports.updateTeam = async (req, res) => {
   try {
-    const team = await Team.findByIdAndUpdate(req.params.id, req.body, {
+    let mem = {
+      ...req.body,
+      slug:
+        req.body.slug !== null || req.body.slug !== ""
+          ? req.body.slug
+          : createSlug(`${team.name} ${team.position}`),
+    };
+    const team = await Team.findByIdAndUpdate(req.params.id, mem, {
       new: true, // Return the updated team
     });
     if (!team) {
@@ -372,7 +394,9 @@ exports.createTeamsMultiple = async (req, res) => {
       image: "",
     },
   ];
-
+  teamArray.forEach((team) => {
+    team.slug = createSlug(`${team.name} ${team.position}`);
+  });
   try {
     const teams = await Team.insertMany(teamArray); // Expecting req.body.teams to be an array of team objects
     res.status(201).json(teams);

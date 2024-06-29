@@ -1,8 +1,13 @@
-// models/Product.js
+// models/Team.js
 const mongoose = require("mongoose");
 
+// Schema definition
 const teamSchema = new mongoose.Schema({
-  slug: String,
+  slug: {
+    type: String,
+    unique: true,
+    trim: true,
+  },
   status: Boolean,
   name: String,
   position: String,

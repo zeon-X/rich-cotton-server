@@ -16,7 +16,7 @@ exports.createTeam = async (req, res) => {
   try {
     let mem = {
       ...req.body,
-      slug: createSlug(`${team.name} ${team.position}`),
+      slug: createSlug(`${req.body?.name} ${req.body?.position}`),
     };
     const team = new Team(mem);
     await team.save();

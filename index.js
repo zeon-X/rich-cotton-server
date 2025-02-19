@@ -11,6 +11,7 @@ env.config();
 const clientRoute = require("./routes/Client");
 const productRoute = require("./routes/Product");
 const teamRoute = require("./routes/Team");
+const appBasicRoute = require("./routes/AppBasic");
 
 //Database Config
 mongoose
@@ -31,6 +32,7 @@ app.use(express.json());
 app.use("/api/v1/client", clientRoute);
 app.use("/api/v1/product", productRoute);
 app.use("/api/v1/team", teamRoute);
+app.use("/api/v1/app-basic", appBasicRoute);
 // app.post("/api/v1/test", (req, res) => {
 //   // Respond with a JSON object containing a message
 //   res.json({ msg: "Endpoint is working properly." });

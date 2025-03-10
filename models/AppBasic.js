@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 
 const appBasicSchema = new mongoose.Schema({
-  photoGallery: [],
+  photoGallery: [{ url: String, caption: String }],
 });
 
 module.exports = mongoose.model("AppBasic", appBasicSchema);

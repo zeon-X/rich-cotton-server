@@ -36,7 +36,7 @@ const getPdf = (req, res) => {
     return res.status(404).json({ message: "No PDF uploaded yet." });
   }
 
-  res.json({ pdf: `https://richcotton.net/uploads/document.pdf` });
+  res.json({ pdf: `https://borderflash.com/uploads/document.pdf` });
 };
 
 module.exports = { upload, getPdf };
